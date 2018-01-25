@@ -1,5 +1,5 @@
 addCommandAlias("fetchBCT", "; clean; update; applyEclipseTemplate")
-commands += bctplugin.Commands.updatePluginCmd
+commands += bctplugin.Commands.updatePluginCmd // "updatePlugin <bctVersion>"
 
 /// -- eclipse stuff
 
