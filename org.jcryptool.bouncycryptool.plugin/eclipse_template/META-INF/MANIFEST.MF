@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BouncyCrypTool connector
+Bundle-SymbolicName: ${project.id};singleton:=true
+Bundle-Version: ${project.version}
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: ${manifest.activator}
+${manifest.requiredBundles}
+${manifest.classpath}
+${manifest.importPackage}

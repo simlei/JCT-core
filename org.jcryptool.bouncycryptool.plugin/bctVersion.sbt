@@ -1,0 +1,1 @@
+bctplugin.Keys.bctVersion := "0.0.915-SNAPSHOT"

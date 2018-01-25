@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.views">
+        <category
+                name="Bouncy Castle"
+                id="org.jcryptool.bouncycryptool.plugin">
+        </category>
+        <view
+                name="Bouncy Castle Algorithms"
+                icon="icons/sample.gif"
+                category="org.jcryptool.bouncycryptool.plugin"
+                class="scalabc.connector.app.views.AlgorithmsView"
+                id="org.jcryptool.bouncycryptool.plugin.AlgorithmsView">
+        </view>
+        <view
+                allowMultiple="false"
+                category="org.jcryptool.bouncycryptool.plugin"
+                class="scalabc.connector.app.views.OperationEditorView"
+                icon="icons/sample.gif"
+                id="org.jcryptool.bouncycryptool.plugin.OperationEditorView"
+                name="Operation editor">
+        </view>
+    </extension>
+    <extension
+            point="org.eclipse.ui.perspectiveExtensions">
+        <perspectiveExtension
+                targetID="org.jcryptool.bouncycryptool.plugin.perspective">
+            <view
+                    closeable="true"
+                    id="org.jcryptool.bouncycryptool.plugin.AlgorithmsView"
+                    ratio="0.75"
+                    relationship="right"
+                    relative="org.eclipse.ui.editorss"
+                    visible="true">
+            </view>
+            <view
+                    closeable="true"
+                    id="org.jcryptool.bouncycryptool.plugin.OperationEditorView"
+                    ratio="0.65"
+                    relationship="bottom"
+                    relative="org.eclipse.ui.editorss"
+                    visible="true">
+            </view>
+        </perspectiveExtension>
+    </extension>
+    <extension
+            point="org.eclipse.ui.perspectives">
+        <perspective
+                class="scalabc.connector.app.legacy.BCTPerspective"
+                id="org.jcryptool.bouncycryptool.plugin.perspective"
+                name="Bouncy Castle">
+        </perspective>
+    </extension>
+
+</plugin>
