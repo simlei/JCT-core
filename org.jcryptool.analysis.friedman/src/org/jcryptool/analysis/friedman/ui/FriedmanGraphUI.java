@@ -159,23 +159,23 @@ public class FriedmanGraphUI extends org.eclipse.swt.widgets.Composite implement
 			group1LData.grabExcessVerticalSpace = true;
 			group1.setLayoutData(group1LData);
 			group1.setText(Messages.FriedmanGraphUI_graph);
-//			{
-//			final FXCanvas fxCanvas = new FXCanvas(group1, SWT.NONE) {
-//		            public org.eclipse.swt.graphics.Point computeSize(int wHint, int hHint, boolean changed) {
-//		                getScene().getWindow().sizeToScene();
-//		                int width = (int) getScene().getWidth();
-//		                int height = (int) getScene().getHeight();
-//		                return new org.eclipse.swt.graphics.Point(width, height);
-//		            }
-//		        };
-//		        //javafx.scene.Group group = new javafx.scene.Group();
-//		        /* Create a JavaFX button */
-//		        //final javafx.scene.control.Button jfxButton = new javafx.scene.control.Button("JFX Button");
-//		        /* Assign the CSS ID ipad-dark-grey */
-//		        //jfxButton.setId("ipad-dark-grey");
-//		        /* Add the button as a child of the Group node */
-//		        //group.getChildren().add(jfxButton);
-//			}
+			{
+			final FXCanvas fxCanvas = new FXCanvas(group1, SWT.NONE) {
+		            public org.eclipse.swt.graphics.Point computeSize(int wHint, int hHint, boolean changed) {
+		                getScene().getWindow().sizeToScene();
+		                int width = (int) getScene().getWidth();
+		                int height = (int) getScene().getHeight();
+		                return new org.eclipse.swt.graphics.Point(width, height);
+		            }
+		        };
+		        javafx.scene.Group group = new javafx.scene.Group();
+		        /* Create a JavaFX button */
+		        final javafx.scene.control.Button jfxButton = new javafx.scene.control.Button("JFX Button");
+		        /* Assign the CSS ID ipad-dark-grey */
+		        jfxButton.setId("ipad-dark-grey");
+		        /* Add the button as a child of the Group node */
+		        group.getChildren().add(jfxButton);
+			}
 			{
 				myGraph = new CustomFriedmanCanvas(group1, SWT.DOUBLE_BUFFERED);
 
