@@ -18,6 +18,8 @@
       </programArgs>
       <vmArgs>-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
 --add-modules=ALL-SYSTEM
+-Dorg.osgi.framework.bundle.parent=ext
+-Dosgi.framework.extensions=org.eclipse.fx.osgi parameters
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>

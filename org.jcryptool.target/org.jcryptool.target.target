@@ -14,9 +14,9 @@
         <unit id="org.eclipse.babel.nls_eclipse_de.feature.group" version="4.8.0.v20180815020001"/>
         <repository location="http://download.eclipse.org/technology/babel/update-site/R0.16.0/photon/"/>
     </location>
-	<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="false" type="InstallableUnit">
-		<unit id="org.eclipse.fx.target.feature.feature.group" version="3.3.0.201809010600"/>
-		<repository location="http://download.eclipse.org/efxclipse/runtime-released/3.4.0/site/"/>
+	<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
+		<unit id="org.eclipse.fx.target.rcp.feature.feature.group" version="3.5.0.201812180700"/>
+		<repository location="http://download.eclipse.org/efxclipse/runtime-nightly/site"/>
 	</location>
 </locations>
 <launcherArgs>
