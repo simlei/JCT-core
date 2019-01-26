@@ -13,6 +13,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -30,7 +31,9 @@ import org.jcryptool.crypto.ui.textloader.ui.wizard.TextLoadController;
 import javafx.embed.swt.FXCanvas;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 import com.cloudgarden.resource.SWTResourceManager;
@@ -53,6 +56,8 @@ public class FriedmanGraphUI extends org.eclipse.swt.widgets.Composite implement
 	private Button btnShowTable;
 	private Button btnResetGraph;
 	private String message;
+	
+	private StyledText outputTest;
 
 	public FriedmanGraphUI(final org.eclipse.swt.widgets.Composite parent, final int style) {
 		super(parent, style);
@@ -148,6 +153,50 @@ public class FriedmanGraphUI extends org.eclipse.swt.widgets.Composite implement
 				});
 
 			}
+			
+			//###########################################
+			// TODO Experimental JavaFX code
+			//###########################################
+			final FXCanvas fxCanvas = new FXCanvas(composite1, SWT.NONE) {
+	            public org.eclipse.swt.graphics.Point computeSize(int wHint, int hHint, boolean changed) {
+	                getScene().getWindow().sizeToScene();
+	                int width = (int) getScene().getWidth();
+	                int height = (int) getScene().getHeight();
+	                return new org.eclipse.swt.graphics.Point(width, height);
+	            }
+	        };
+	        fxCanvas.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 4, 1));
+	        final javafx.scene.control.Button fxButton = new javafx.scene.control.Button("Java-FX Test Button"
+	        		+ "- Click me to println() and prove this works");
+	        /* Assign the CSS ID ipad-dark-grey */
+	        fxButton.setId("ipad-dark-grey");
+	        
+	        StackPane layoutPane = new StackPane();
+	        layoutPane.getChildren().add(fxButton);
+	        layoutPane.setAlignment(Pos.TOP_CENTER);
+
+	        Scene fxScene = new Scene(layoutPane);
+	        fxCanvas.setScene(fxScene);
+	        
+	        fxButton.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("You clicked the JavaFX Button");
+					outputTest.append("You clicked the JavaFX Button\n");
+					
+				}
+			});
+	        
+	        
+	        outputTest = new StyledText(composite1, SWT.V_SCROLL);
+	        outputTest.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,  true, 4, 2));
+	        
+			//###########################################
+			// End of experimental JavaFX code
+			//###########################################
+			
+			
 			group1 = new Group(this, SWT.NONE);
 			GridLayout group1Layout = new GridLayout();
 			group1Layout.makeColumnsEqualWidth = true;
@@ -159,23 +208,7 @@ public class FriedmanGraphUI extends org.eclipse.swt.widgets.Composite implement
 			group1LData.grabExcessVerticalSpace = true;
 			group1.setLayoutData(group1LData);
 			group1.setText(Messages.FriedmanGraphUI_graph);
-			{
-			final FXCanvas fxCanvas = new FXCanvas(group1, SWT.NONE) {
-		            public org.eclipse.swt.graphics.Point computeSize(int wHint, int hHint, boolean changed) {
-		                getScene().getWindow().sizeToScene();
-		                int width = (int) getScene().getWidth();
-		                int height = (int) getScene().getHeight();
-		                return new org.eclipse.swt.graphics.Point(width, height);
-		            }
-		        };
-		        javafx.scene.Group group = new javafx.scene.Group();
-		        /* Create a JavaFX button */
-		        final javafx.scene.control.Button jfxButton = new javafx.scene.control.Button("JFX Button");
-		        /* Assign the CSS ID ipad-dark-grey */
-		        jfxButton.setId("ipad-dark-grey");
-		        /* Add the button as a child of the Group node */
-		        group.getChildren().add(jfxButton);
-			}
+					
 			{
 				myGraph = new CustomFriedmanCanvas(group1, SWT.DOUBLE_BUFFERED);
 
