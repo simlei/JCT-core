@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component name="org.eclipse.help.ui_4.1.700.201910241235" version="1.2">
+    <plugin id="org.eclipse.help.ui_4.1.700.201910241235"/>
+    <package name="org.eclipse.help.ui" visibility="1">
+        <type name="IEngineDescriptor" restrictions="3"/>
+    </package>
+</component>

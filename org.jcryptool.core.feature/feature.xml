@@ -281,4 +281,11 @@ litigation.
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.eclipse.help.ui"
+         download-size="0"
+         install-size="0"
+         version="4.1.600.v20190814-0936"
+         unpack="false"/>
+
 </feature>

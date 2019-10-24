@@ -1,0 +1,3 @@
+This project is a hot-fix replacing the org.eclipse.help.ui binaries to fix ReusableHelpPart not disposing itself.
+To not have to ship the whole entourage of org.eclipse.help.ui (I actually failed to build it with maven in the first place), 
+this replaces the version with the one that the other target platform plugins expect.
