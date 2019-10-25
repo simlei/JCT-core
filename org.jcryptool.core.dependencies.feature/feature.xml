@@ -226,7 +226,7 @@ litigation.
 
    <includes
          id="org.eclipse.help"
-         version="0.0.0"/>
+         version="2.3.0"/>
 
    <includes
          id="org.eclipse.rcp"

@@ -19,7 +19,7 @@
 
   <modules>
     <module>com.thoughtworks.qdox</module>
-    <module>org.eclipse.help.ui</module>
+    <!-- <module>org.eclipse.help.ui</module> -->
     <module>de.flexiprovider</module>
     <module>net.sourceforge.codec</module>
     <module>net.sourceforge.ehep</module>

@@ -64,6 +64,11 @@ Maven 3 and Java 8 are required for the build. See https://github.com/jcryptool/
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho.version}</version>
 				<configuration>
+                    <!-- <filter> -->
+                    <!--     <type>eclipse-plugin</type> -->
+                    <!--     <id>org.eclipse.help.ui</id> -->
+                    <!--     <removeAll /> -->
+                    <!-- </filter> -->
 					<target>
 						<artifact>
 							<groupId>org.jcryptool</groupId>

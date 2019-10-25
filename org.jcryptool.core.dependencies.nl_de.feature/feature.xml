@@ -226,8 +226,8 @@ litigation.
 
    <requires>
       <import feature="org.jcryptool.core.dependencies.feature" version="1.0.0"/>
-      <import feature="org.eclipse.rcp" version="4.2.2.v20130129-152330-7IARAABrMQkGSvMgQnUlz-DQz00h"/>
-      <import feature="org.eclipse.help" version="1.4.1.v20120912-144938-8R7xFOXFLWUl7PpNBh_HIGkb4"/>
+      <import feature="org.eclipse.rcp" version="4.1.701.v20190917-1614"/>
+      <import feature="org.eclipse.help" version="2.3.0"/>
    </requires>
 
    <plugin
